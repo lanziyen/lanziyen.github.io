@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>lanziyen&#39;s blog</title>
+  <title>04. Hadoop installation | lanziyen&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lanziyen's blog">
-<meta property="og:url" content="https://lanziyen.github.io/index.html">
+  <meta name="description" content="Installation
+12345678910111213# wget http://apache.stu.edu.tw/hadoop/common/hadoop-2.7.2/hadoop-2.7.2.tar.gz# tar zxvf hadoop-2.7.2.tar.gz; cd hadoop-2.7.2# vim etc/hadoop/hadoop-env.sh	=&amp;gt; export">
+<meta property="og:type" content="article">
+<meta property="og:title" content="04. Hadoop installation">
+<meta property="og:url" content="https://lanziyen.github.io/04-Hadoop-installation/index.html">
 <meta property="og:site_name" content="lanziyen's blog">
-<meta property="og:description">
+<meta property="og:description" content="Installation
+12345678910111213# wget http://apache.stu.edu.tw/hadoop/common/hadoop-2.7.2/hadoop-2.7.2.tar.gz# tar zxvf hadoop-2.7.2.tar.gz; cd hadoop-2.7.2# vim etc/hadoop/hadoop-env.sh	=&amp;gt; export">
+<meta property="og:updated_time" content="2016-06-29T02:05:20.762Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lanziyen's blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="04. Hadoop installation">
+<meta name="twitter:description" content="Installation
+12345678910111213# wget http://apache.stu.edu.tw/hadoop/common/hadoop-2.7.2/hadoop-2.7.2.tar.gz# tar zxvf hadoop-2.7.2.tar.gz; cd hadoop-2.7.2# vim etc/hadoop/hadoop-env.sh	=&amp;gt; export">
   
     <link rel="alternate" href="/atom.xml" title="lanziyen&#39;s blog" type="application/atom+xml">
   
@@ -62,9 +66,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-04-Hadoop-installation" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-04-Hadoop-installation" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/04-Hadoop-installation/" class="article-date">
   <time datetime="2016-06-29T02:31:43.000Z" itemprop="datePublished">2016-06-29</time>
@@ -77,8 +79,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/04-Hadoop-installation/">04. Hadoop installation</a>
+    <h1 class="article-title" itemprop="name">
+      04. Hadoop installation
     </h1>
   
 
@@ -109,202 +111,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-03-Kafka-installation" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/03-Kafka-installation/" class="article-date">
-  <time datetime="2016-06-24T07:23:03.000Z" itemprop="datePublished">2016-06-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/03-Kafka-installation/">03. Kafka installation</a>
-    </h1>
+    <a href="/03-Kafka-installation/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">03. Kafka installation</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><p>Installation</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># wget &quot;http://mirror.cc.columbia.edu/pub/software/apache/kafka/0.8.2.1/kafka_2.11-0.8.2.1.tgz&quot;</span><br><span class="line"># tar zxvf kafka_2.11-0.8.2.1.tgz</span><br><span class="line"># ln -s kafaka_2.11-0.8.2.1 kafaka; cd kafaka</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Test<br> a. Standalone</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># bin/zookeeper-server-start.sh -daemon config/zookeeper.properties</span><br><span class="line"># bin/kafka-server-start.sh -daemon config/server.properties</span><br><span class="line"># echo &quot;Hello, world&quot; | bin/kafka-console-producer.sh --broker-list localhost:9092 --topic Mytest</span><br><span class="line"># bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic Mytest --from-beginning</span><br></pre></td></tr></table></figure>
-<p> b. Single Node, remote zookeeper</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">zookeeper: 172.17.0.1</span><br><span class="line">kafka: 172.17.0.2</span><br><span class="line"></span><br><span class="line">kafka</span><br><span class="line"># vim config/server.properties</span><br><span class="line">	zookeeper.connect=172.17.0.1:2181</span><br><span class="line"># bin/kafka-server-start.sh -daemon config/server.properties</span><br><span class="line"># bin/kafka-topics.sh --create --zookeeper 172.17.0.1:2181 --partitions 1 --replication-factor 1 --topic Mytest</span><br><span class="line"># bin/kafka-console-consumer.sh --zookeeper 172.17.0.1:2181 --topic Mytest --from-beginning</span><br><span class="line"></span><br><span class="line">client</span><br><span class="line">$ bin/kafka-console-producer.sh --broker-list 172.17.0.2:9092 --topic Mytest</span><br></pre></td></tr></table></figure>
-<p> c. Single Node, remote zookeeper, client</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">kafka: 172.17.0.2</span><br><span class="line"></span><br><span class="line">kafka</span><br><span class="line"># vim config/server.properties</span><br><span class="line">	advertised.host.name=172.17.0.2</span><br><span class="line">	zookeeper.connect=172.17.0.1:2181</span><br><span class="line"># bin/kafka-server-start.sh -daemon config/server.properties</span><br><span class="line"># bin/kafka-topics.sh --create --zookeeper 172.17.0.1:2181 --partitions 1 --replication-factor 1 --topic Mytest</span><br><span class="line"># bin/kafka-console-consumer.sh --zookeeper 172.17.0.1:2181 --topic Mytest --from-beginning</span><br><span class="line"></span><br><span class="line">client</span><br><span class="line">$ bin/kafka-console-producer.sh --broker-list 172.17.0.2:9092 --topic Mytest</span><br></pre></td></tr></table></figure>
-<p> d. Single Node-Multiple Brokers Configuration</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">kafka-1: 172.17.0.2</span><br><span class="line"># vim config/server.properties</span><br><span class="line">	broker.id=0</span><br><span class="line">	advertised.host.name=172.17.0.2</span><br><span class="line">	zookeeper.connect=172.17.0.1:2181</span><br><span class="line"># bin/kafka-server-start.sh -daemon config/server.properties</span><br><span class="line"></span><br><span class="line">kafka-2: 172.17.0.3</span><br><span class="line"># vim config/server.properties</span><br><span class="line">	broker.id=1</span><br><span class="line">	advertised.host.name=172.17.0.3</span><br><span class="line">	zookeeper.connect=172.17.0.1:2181</span><br><span class="line"># bin/kafka-server-start.sh -daemon config/server.properties</span><br><span class="line"></span><br><span class="line"># bin/kafka-topics.sh --create --zookeeper 172.17.0.1:2181 -partitions 1 --replication-factor 2 --topic Mytest</span><br><span class="line"># bin/kafka-console-producer.sh --broker-list localhost:9092 --topic Mytest</span><br><span class="line"></span><br><span class="line">client</span><br><span class="line">$ bin/kafka-console-consumer.sh --zookeeper 172.17.0.1:2181 --topic Mytest --from-beginning</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://lanziyen.github.io/03-Kafka-installation/" data-id="cipxes2jb0003qdn0w7t5ghej" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cloud/">cloud</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-02-Zookeeper-installation" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/02-Zookeeper-installation/" class="article-date">
-  <time datetime="2016-06-22T06:23:16.000Z" itemprop="datePublished">2016-06-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/02-Zookeeper-installation/">02. Zookeeper installation</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><p>Installation</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># wget http://apache.stu.edu.tw/zookeeper/stable/zookeeper-3.4.8.tar.gz</span><br><span class="line"># tar zxvf zookeeper-3.4.8.tar.gz</span><br><span class="line"># ln -s zookeeper-3.4.8 zookeeper</span><br><span class="line"># cd zookeeper</span><br><span class="line"># cp conf/zoo_sample.cfg conf/zoo.cfg</span><br><span class="line"># mkdir /tmp/zookeeper (ref: zoo.cfg)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Mode setup<br> a. standalone</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># bin/zkServer.sh start</span><br><span class="line"># bin/zkServer.sh stop</span><br></pre></td></tr></table></figure>
-<p> b. cluster</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># vim conf/zoo.cfg</span><br><span class="line">	server.1=172.17.0.1:2888:3888</span><br><span class="line">	server.2=172.17.0.2:2888:3888</span><br><span class="line">	server.3=172.17.0.3:2888:3888</span><br><span class="line"># echo &quot;1&quot; &gt; /tmp/zookeeper/myid</span><br><span class="line"># bin/zkServer.sh start</span><br><span class="line"># bin/zkServer.sh stop</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Test</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># echo &quot;stat&quot; | nc localhost 2181</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Client operation</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># bin/zkCli.sh -server 172.17.0.1:2181</span><br><span class="line">[zk: 172.17.0.1:2181(CONNECTED) 0]</span><br><span class="line">a. create /mytest &quot;Hello, world&quot;</span><br><span class="line">b. ls /</span><br><span class="line">   get /mytest</span><br><span class="line">c. set /mytest &quot;My test&quot;</span><br><span class="line">d. delete /mytest</span><br><span class="line">e. quit</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://lanziyen.github.io/02-Zookeeper-installation/" data-id="cipxes2jp000bqdn03ekq7iaa" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cloud/">cloud</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-01-My-hexo-installation" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/01-My-hexo-installation/" class="article-date">
-  <time datetime="2016-06-21T09:24:41.000Z" itemprop="datePublished">2016-06-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/01-My-hexo-installation/">01. My hexo installation</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Ubuntu<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br><span class="line">$ mkdir hexo; cd hexo</span><br><span class="line">$ hexo init</span><br><span class="line"></span><br><span class="line">$ vim _config.yml</span><br><span class="line">	title: xxx</span><br><span class="line">	author: yyy</span><br><span class="line">	deploy:</span><br><span class="line">		type: git</span><br><span class="line">		repo: github&apos;s repo</span><br></pre></td></tr></table></figure></p>
-<p>local test:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></p>
-<p>github deploy<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br><span class="line"></span><br><span class="line">or</span><br><span class="line">$ hexo generate --deploy</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://lanziyen.github.io/01-My-hexo-installation/" data-id="cipxes2j10000qdn0x0rr3ec6" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/hello-world/" class="article-date">
-  <time datetime="2016-06-21T06:32:56.301Z" itemprop="datePublished">2016-06-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://lanziyen.github.io/hello-world/" data-id="cipxes2jd0006qdn0r6drc6rc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         
