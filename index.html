@@ -64,6 +64,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-06-HBase-installation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/06-HBase-installation/" class="article-date">
+  <time datetime="2016-06-30T07:28:23.000Z" itemprop="datePublished">2016-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/06-HBase-installation/">06. HBase installation</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>Installation<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># wget http://apache.stu.edu.tw/hbase/stable/hbase-1.1.5-bin.tar.gz</span><br><span class="line"># tar zxvf hbase-1.1.5-bin.tar.gz; cd hbase-1.1.5</span><br><span class="line"># vim conf/hbase-env.sh</span><br><span class="line">	export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/</span><br><span class="line"># vim conf/hbase-site.xml</span><br><span class="line">  &lt;property&gt;</span><br><span class="line">    &lt;name&gt;hbase.rootdir&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;hdfs://172.17.0.1:9000/hbase&lt;/value&gt;</span><br><span class="line">  &lt;/property&gt;</span><br><span class="line">  &lt;property&gt;</span><br><span class="line">    &lt;name&gt;hbase.cluster.distributed&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;true&lt;/value&gt;</span><br><span class="line">  &lt;/property&gt;   </span><br><span class="line">  &lt;property&gt;</span><br><span class="line">    &lt;name&gt;hbase.zookeeper.quorum&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;172.17.0.1,172.17.0.2,172.17.0.3&lt;/value&gt;</span><br><span class="line">  &lt;/property&gt;</span><br><span class="line"># vim conf/regionservers</span><br><span class="line">	172.17.0.2</span><br><span class="line">	172.17.0.3</span><br><span class="line"># scp -r hbase-1.1.5 root@172.17.0.2:~/project</span><br><span class="line"># bin/start-hbase.sh</span><br><span class="line">	=&gt; http://172.17.0.1:16010</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://lanziyen.github.io/06-HBase-installation/" data-id="ciq1zowc80008d4n0bd2t3i7u" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cloud/">cloud</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-05-Spark-installation" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/05-Spark-installation/" class="article-date">
@@ -103,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://lanziyen.github.io/05-Spark-installation/" data-id="ciq1ydnnn0001k5n0wt0vauaw" class="article-share-link">Share</a>
+      <a data-url="https://lanziyen.github.io/05-Spark-installation/" data-id="ciq1zowc50004d4n05irzgg8m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cloud/">cloud</a></li></ul>
@@ -152,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://lanziyen.github.io/04-Hadoop-installation/" data-id="ciq1ydnnh0000k5n0b3h9d5gr" class="article-share-link">Share</a>
+      <a data-url="https://lanziyen.github.io/04-Hadoop-installation/" data-id="ciq1zowc60006d4n0i9r6s2ei" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cloud/">cloud</a></li></ul>
@@ -204,7 +246,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://lanziyen.github.io/03-Kafka-installation/" data-id="ciq1ydnnw0006k5n0ioxossdv" class="article-share-link">Share</a>
+      <a data-url="https://lanziyen.github.io/03-Kafka-installation/" data-id="ciq1zowc40003d4n0fmtfyuw9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cloud/">cloud</a></li></ul>
@@ -258,7 +300,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://lanziyen.github.io/02-Zookeeper-installation/" data-id="ciq1ydnnz0008k5n0vi2ze3g9" class="article-share-link">Share</a>
+      <a data-url="https://lanziyen.github.io/02-Zookeeper-installation/" data-id="ciq1zowc00001d4n0ybk27anx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cloud/">cloud</a></li></ul>
@@ -299,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://lanziyen.github.io/01-My-hexo-installation/" data-id="ciq1ydnnu0004k5n038syyj6i" class="article-share-link">Share</a>
+      <a data-url="https://lanziyen.github.io/01-My-hexo-installation/" data-id="ciq1zowbv0000d4n01uk8udst" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -346,7 +388,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://lanziyen.github.io/hello-world/" data-id="ciq1ydnns0003k5n0kb1ng9re" class="article-share-link">Share</a>
+      <a data-url="https://lanziyen.github.io/hello-world/" data-id="ciq1zowca0009d4n0vkio7sls" class="article-share-link">Share</a>
       
       
     </footer>
@@ -400,6 +442,10 @@
       <ul>
         
           <li>
+            <a href="/06-HBase-installation/">06. HBase installation</a>
+          </li>
+        
+          <li>
             <a href="/05-Spark-installation/">05. Spark installation</a>
           </li>
         
@@ -413,10 +459,6 @@
         
           <li>
             <a href="/02-Zookeeper-installation/">02. Zookeeper installation</a>
-          </li>
-        
-          <li>
-            <a href="/01-My-hexo-installation/">01. My hexo installation</a>
           </li>
         
       </ul>
